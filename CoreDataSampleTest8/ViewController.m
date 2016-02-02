@@ -114,6 +114,13 @@
     [self.navigationController pushViewController:evc animated:YES];
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
+{
+    Empolyees *employee=[empDetailArr objectAtIndex:indexPath.row];
+    
+    [[[UIAlertView alloc]initWithTitle:@"CoreDataSample" message:[NSString stringWithFormat:@"%@",employee.empName] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil] show];
+}
+
 
 #pragma mark -- Segue Method
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
